@@ -1,1 +1,15 @@
-[]
+- id: '1666563840831'
+  alias: backup-manage
+  description: This automation triggers at 0430, purges backups older than 12 hou
+rs,
+    and then creates a backup.
+  trigger:
+  - platform: time
+    at: 04:30:00
+  condition: []
+  action:
+  - service: shell_command.clean_backup_dir
+    data: {}
+  - service: backup.create
+    data: {}
+  mode: single

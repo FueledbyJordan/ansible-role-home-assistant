@@ -6,6 +6,9 @@ http:
   trusted_proxies:
     - {{ home_assistant_trusted_proxy }}
 
+shell_command:
+  clean_backup_dir: find /config/backups -name *.tar -type f -mmin +720 -delete
+
 # Text to speech
 tts:
   - platform: google_translate
