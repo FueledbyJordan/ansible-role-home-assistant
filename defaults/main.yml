@@ -1,0 +1,4 @@
+---
+home_assistant_conf_dir: '/opt/appdata/homeassistant'
+home_assistant_user: 'homeassistant'
+home_assistant_group: 'homeassistant'

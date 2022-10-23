@@ -1,0 +1,58 @@
+---
+# tasks file for ansible-role-utilities
+
+- name: Place configuration dir
+  ansible.builtin.file:
+    state: directory
+    path:  "{{ home_assistant_conf_dir }}"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0755'
+
+- name: Place backups dir
+  ansible.builtin.file:
+    state: directory
+    path:  "{{ home_assistant_conf_dir }}/backups"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0755'
+
+- name: Place configuration.yaml
+  ansible.builtin.template:
+    src: configuration.yaml.j2
+    dest: "{{ home_assistant_conf_dir }}/configuration.yaml"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0644'
+
+- name: Place automations.yaml
+  ansible.builtin.template:
+    src: automations.yaml.j2
+    dest: "{{ home_assistant_conf_dir }}/automations.yaml"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0644'
+
+- name: Place scripts.yaml
+  ansible.builtin.template:
+    src: scripts.yaml.j2
+    dest: "{{ home_assistant_conf_dir }}/scripts.yaml"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0644'
+
+- name: Place scenes.yaml
+  ansible.builtin.template:
+    src: scenes.yaml.j2
+    dest: "{{ home_assistant_conf_dir }}/scenes.yaml"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0644'
+
+- name: Place secrets.yaml
+  ansible.builtin.template:
+    src: secrets.yaml.j2
+    dest: "{{ home_assistant_conf_dir }}/secrets.yaml"
+    owner: "{{ home_assistant_user }}"
+    group: "{{ home_assistant_group }}"
+    mode: '0644'
