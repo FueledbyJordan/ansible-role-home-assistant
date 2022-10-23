@@ -10,6 +10,13 @@ N/A
 
 Role Variables
 --------------
+* home\_assistant\_trusted\_proxy
+
+Role Defaults
+-------------
+* home\_assistant\_conf\_dir
+* home\_assistant\_user
+* home\_assistant\_group
 
 N/A
 
